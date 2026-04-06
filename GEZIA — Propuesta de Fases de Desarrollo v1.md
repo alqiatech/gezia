@@ -4,7 +4,7 @@
 **Documento:** Plan Maestro de Ejecución  
 **Versión:** 1.0  
 **Fecha de creación:** 5 de abril de 2026  
-**Estado general del proyecto:** EN EJECUCION — Fase 4 completada — Fase 5 siguiente
+**Estado general del proyecto:** EN EJECUCION — Fase 5 completada — Fase 6 siguiente
 
 ---
 
@@ -38,7 +38,7 @@ Las pruebas y criterios de aceptación deben marcarse individualmente al cierre 
 | 2 | Infraestructura y Datos | Infraestructura de operaciones: jobs, deduplicación, auditoría | Alta | `[x] COMPLETADA — 6 abr 2026` |
 | 3 | Motor Relacional | Edge Functions de base y bootstrap | Alta | `[x] COMPLETADA — 6 abr 2026` |
 | 4 | Motor Relacional | Pipeline de inferencia: triage → ensamblado | Muy Alta | `[x] COMPLETADA — 6 abr 2026` |
-| 5 | Motor Relacional | Patrones, resonancias y memoria longitudinal | Alta | `[ ]` |
+| 5 | Motor Relacional | Patrones, resonancias y memoria longitudinal | Alta | `[x] COMPLETADA — 6 abr 2026` |
 | 6 | Zona Compartida | Workspaces, invitaciones y derivados autorizados | Alta | `[ ]` |
 | 7 | UI Nativa | Onboarding, splash y estructura de navegación | Media | `[ ]` |
 | 8 | UI Nativa | Módulos Inicio, Expedientes y detalle de expediente | Alta | `[ ]` |
@@ -613,7 +613,7 @@ El worker toma un job de `job_queue` de tipo `process_scene_inference` y ejecuta
 ## FASE 5 — Patrones, resonancias y memoria longitudinal
 
 **Complejidad:** Alta  
-**Estado:** `[ ]`  
+**Estado:** `[x] COMPLETADA — 6 de abril de 2026`  
 **Depende de:** Fase 4 completa  
 **Bloquea si no está:** El sistema no aprende; el cruce entre expedientes no existe
 
