@@ -1,0 +1,36 @@
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Supabase
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Node / package managers
+node_modules/
+.pnp
+.pnp.js
+
+# Dart / Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+*.iml
+
+# IDE
+.idea/
+.vscode/settings.json
+.vscode/launch.json
+*.suo
+*.user
+
+# Logs
+*.log
+logs/
