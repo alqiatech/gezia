@@ -24,7 +24,7 @@
 // =============================================================================
 
 import { requireAuth } from "../_shared/auth.ts";
-import { ErrorCode, errorResponse, okResponse } from "../_shared/errors.ts";
+import { ErrorCode, errorResponse, okResponse, corsPreflightResponse } from "../_shared/errors.ts";
 import { logAuditEvent } from "../_shared/audit.ts";
 import { checkAndRegisterDedup, markDedupCompleted } from "../_shared/dedup.ts";
 
@@ -37,6 +37,7 @@ function sanitizeStringArray(val: unknown): string[] | undefined {
 }
 
 Deno.serve(async (req: Request) => {
+  if (req.method === "OPTIONS") return corsPreflightResponse();
   if (req.method !== "POST") {
     return errorResponse(ErrorCode.INVALID_PAYLOAD, "Method not allowed");
   }

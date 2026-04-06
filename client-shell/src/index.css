@@ -1,0 +1,192 @@
+:root {
+  --sand:   #EBE9E3;
+  --mist:   #C5D4D0;
+  --slate:  #68858F;
+  --amber:  #DDB273;
+  --deep:   #0E3A52;
+  --white:  #FFFFFF;
+  --danger: #b94040;
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--sand);
+  color: var(--deep);
+  min-height: 100dvh;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- utilities ---- */
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  gap: 16px;
+}
+
+.screen-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--deep);
+  letter-spacing: -0.3px;
+}
+
+.screen-sub {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--mist);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--deep);
+  font-size: 15px;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--slate);
+}
+
+textarea { min-height: 120px; resize: vertical; }
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.field { display: flex; flex-direction: column; gap: 4px; }
+
+.btn {
+  padding: 14px 20px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font);
+  transition: opacity 0.15s;
+}
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn:active:not(:disabled) { opacity: 0.75; }
+
+.btn-primary { background: var(--deep); color: var(--white); }
+.btn-secondary { background: var(--mist); color: var(--deep); }
+.btn-ghost { background: transparent; color: var(--slate); padding: 8px 4px; }
+
+.error-box {
+  background: #fdf0f0;
+  border: 1.5px solid #e8c0c0;
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--danger);
+  line-height: 1.4;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 1.5px solid var(--mist);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.card:hover { border-color: var(--slate); }
+.card-title { font-size: 16px; font-weight: 500; color: var(--deep); }
+.card-sub { font-size: 13px; color: var(--slate); margin-top: 4px; }
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.status-queued    { background: #e8f0fe; color: #3b55a8; }
+.status-running   { background: #fef3cd; color: #8a5e00; }
+.status-completed { background: #e6f4ea; color: #2d723f; }
+.status-failed    { background: #fdf0f0; color: var(--danger); }
+.status-submitted { background: var(--mist); color: var(--deep); }
+
+.spinner {
+  width: 22px; height: 22px;
+  border: 3px solid var(--mist);
+  border-top-color: var(--slate);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.divider {
+  height: 1px;
+  background: var(--mist);
+  width: 100%;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--mist);
+  color: var(--deep);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.output-block {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 14px;
+  border-left: 3px solid var(--slate);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--deep);
+}
+.output-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--slate);
+  margin-bottom: 6px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px 0;
+}
+.nav-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--slate);
+  padding: 0;
+}

@@ -4,11 +4,12 @@
  */
 
 import { requireAuth } from "../_shared/auth.ts";
-import { errorResponse, okResponse, ErrorCode } from "../_shared/errors.ts";
+import { errorResponse, okResponse, ErrorCode, corsPreflightResponse } from "../_shared/errors.ts";
 import { checkAndRegisterDedup, markDedupCompleted } from "../_shared/dedup.ts";
 import { logAuditEvent } from "../_shared/audit.ts";
 
 Deno.serve(async (req: Request) => {
+  if (req.method === "OPTIONS") return corsPreflightResponse();
   if (req.method !== "POST") return errorResponse(ErrorCode.INVALID_PAYLOAD, "POST required");
 
   const auth = await requireAuth(req);

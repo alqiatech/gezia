@@ -12,10 +12,11 @@
 // =============================================================================
 
 import { requireAuth } from "../_shared/auth.ts";
-import { ErrorCode, errorResponse, okResponse } from "../_shared/errors.ts";
+import { ErrorCode, errorResponse, okResponse, corsPreflightResponse } from "../_shared/errors.ts";
 import { logAuditEvent } from "../_shared/audit.ts";
 
 Deno.serve(async (req: Request) => {
+  if (req.method === "OPTIONS") return corsPreflightResponse();
   // Solo POST
   if (req.method !== "POST") {
     return errorResponse(ErrorCode.INVALID_PAYLOAD, "Method not allowed");

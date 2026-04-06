@@ -11,7 +11,7 @@
  */
 
 import { requireAuth } from "../_shared/auth.ts";
-import { errorResponse, okResponse, ErrorCode } from "../_shared/errors.ts";
+import { errorResponse, okResponse, ErrorCode, corsPreflightResponse } from "../_shared/errors.ts";
 import { logAuditEvent } from "../_shared/audit.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
@@ -21,6 +21,7 @@ const SERVICE_ROLE_KEY =
   "";
 
 Deno.serve(async (req: Request) => {
+  if (req.method === "OPTIONS") return corsPreflightResponse();
   if (req.method !== "POST") return errorResponse(ErrorCode.INVALID_PAYLOAD, "POST required");
 
   const auth = await requireAuth(req);

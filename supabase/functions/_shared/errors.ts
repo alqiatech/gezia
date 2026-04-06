@@ -30,6 +30,17 @@ const HTTP_STATUS: Record<ErrorCode, number> = {
   INTERNAL_ERROR:                  500,
 };
 
+export const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+};
+
+/** Respuesta al preflight OPTIONS — requerida por browsers. */
+export function corsPreflightResponse(): Response {
+  return new Response(null, { status: 204, headers: CORS_HEADERS });
+}
+
 /**
  * Construye una Response de error limpia para el cliente.
  * Nunca incluye stacktrace ni detalles internos.
@@ -39,7 +50,7 @@ export function errorResponse(code: ErrorCode, message?: string): Response {
     JSON.stringify({ error: code, message: message ?? code }),
     {
       status: HTTP_STATUS[code],
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     },
   );
 }
@@ -50,6 +61,6 @@ export function errorResponse(code: ErrorCode, message?: string): Response {
 export function okResponse(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
   });
 }
