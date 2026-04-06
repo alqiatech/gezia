@@ -4,7 +4,7 @@
 **Documento:** Plan Maestro de Ejecución  
 **Versión:** 1.0  
 **Fecha de creación:** 5 de abril de 2026  
-**Estado general del proyecto:** EN EJECUCION — Fase 2 activa
+**Estado general del proyecto:** EN EJECUCION — Fase 4 completada — Fase 5 siguiente
 
 ---
 
@@ -34,10 +34,10 @@ Las pruebas y criterios de aceptación deben marcarse individualmente al cierre 
 
 | # | Bloque | Fase | Complejidad | Estado |
 |---|--------|------|-------------|--------|
-| 1 | Infraestructura y Datos | Fundación de base de datos, schemas y RLS | Alta | `[ ]` |
-| 2 | Infraestructura y Datos | Infraestructura de operaciones: jobs, deduplicación, auditoría | Alta | `[ ]` |
-| 3 | Motor Relacional | Edge Functions de base y bootstrap | Alta | `[ ]` |
-| 4 | Motor Relacional | Pipeline de inferencia: triage → ensamblado | Muy Alta | `[ ]` |
+| 1 | Infraestructura y Datos | Fundación de base de datos, schemas y RLS | Alta | `[x] COMPLETADA — 6 abr 2026` |
+| 2 | Infraestructura y Datos | Infraestructura de operaciones: jobs, deduplicación, auditoría | Alta | `[x] COMPLETADA — 6 abr 2026` |
+| 3 | Motor Relacional | Edge Functions de base y bootstrap | Alta | `[x] COMPLETADA — 6 abr 2026` |
+| 4 | Motor Relacional | Pipeline de inferencia: triage → ensamblado | Muy Alta | `[x] COMPLETADA — 6 abr 2026` |
 | 5 | Motor Relacional | Patrones, resonancias y memoria longitudinal | Alta | `[ ]` |
 | 6 | Zona Compartida | Workspaces, invitaciones y derivados autorizados | Alta | `[ ]` |
 | 7 | UI Nativa | Onboarding, splash y estructura de navegación | Media | `[ ]` |
@@ -443,7 +443,7 @@ Porque el pipeline será invocado desde Edge Functions. La capa de funciones es 
 ## FASE 4 — Pipeline de inferencia: triage → ensamblado
 
 **Complejidad:** Muy Alta  
-**Estado:** `[ ]`  
+**Estado:** `[x] COMPLETADA — 6 de abril de 2026`  
 **Depende de:** Fases 1, 2 y 3 completas  
 **Bloquea si no está:** El producto no tiene motor; sin esto no hay lectura, movimiento ni confrontación
 
